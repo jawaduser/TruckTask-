@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="tracktask.Pages.SignUpPage"
+    Title="Sign Up"
+    BackgroundColor="White"
+    Shell.FlyoutBehavior="Disabled">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20">
+
+            <Label Text="Create Account"
+                   FontSize="30"
+                   HorizontalOptions="Center"
+                   TextColor="#555555" />
+
+            <Label Text="Full Name" TextColor="Gray" />
+
+            <Entry Placeholder="Enter your full name"
+                   Text="{Binding FullName}"
+                   Keyboard="Text"
+                   HeightRequest="50"
+                   TextColor="Black" />
+
+            <Label Text="Email" TextColor="Gray" />
+
+            <Entry Placeholder="Enter your email"
+                   Text="{Binding Email}"
+                   Keyboard="Email"
+                   HeightRequest="50"
+                   TextColor="Black" />
+
+            <Label Text="Password" TextColor="Gray" />
+
+            <Entry Placeholder="Enter your password"
+                   Text="{Binding Password}"
+                   IsPassword="True"
+                   HeightRequest="50"
+                   TextColor="Black" />
+
+            <Button Text="Sign Up"
+                    Command="{Binding SignUpCommand}"
+                    BackgroundColor="#4A90E2"
+                    TextColor="White"
+                    HeightRequest="55"
+                    CornerRadius="15" />
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="5">
+                <Label Text="Already have an account?"
+                       TextColor="Gray"
+                       FontSize="13" />
+
+                <Label Text="Log In"
+                       TextColor="#4A90E2"
+                       FontSize="13"
+                       FontAttributes="Bold">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NavigateToLoginCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

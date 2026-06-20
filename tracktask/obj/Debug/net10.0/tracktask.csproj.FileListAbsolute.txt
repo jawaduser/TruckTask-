@@ -1,0 +1,13 @@
+C:\Users\jawaad kadi\source\repos\tracktask\tracktask\bin\Debug\net10.0\tracktask.deps.json
+C:\Users\jawaad kadi\source\repos\tracktask\tracktask\bin\Debug\net10.0\tracktask.dll
+C:\Users\jawaad kadi\source\repos\tracktask\tracktask\bin\Debug\net10.0\tracktask.pdb
+C:\Users\jawaad kadi\source\repos\tracktask\tracktask\obj\Debug\net10.0\tracktask.csproj.AssemblyReference.cache
+C:\Users\jawaad kadi\source\repos\tracktask\tracktask\obj\Debug\net10.0\tracktask.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jawaad kadi\source\repos\tracktask\tracktask\obj\Debug\net10.0\tracktask.AssemblyInfoInputs.cache
+C:\Users\jawaad kadi\source\repos\tracktask\tracktask\obj\Debug\net10.0\tracktask.AssemblyInfo.cs
+C:\Users\jawaad kadi\source\repos\tracktask\tracktask\obj\Debug\net10.0\tracktask.csproj.CoreCompileInputs.cache
+C:\Users\jawaad kadi\source\repos\tracktask\tracktask\obj\Debug\net10.0\XamlC.stamp
+C:\Users\jawaad kadi\source\repos\tracktask\tracktask\obj\Debug\net10.0\tracktask.dll
+C:\Users\jawaad kadi\source\repos\tracktask\tracktask\obj\Debug\net10.0\refint\tracktask.dll
+C:\Users\jawaad kadi\source\repos\tracktask\tracktask\obj\Debug\net10.0\tracktask.pdb
+C:\Users\jawaad kadi\source\repos\tracktask\tracktask\obj\Debug\net10.0\ref\tracktask.dll

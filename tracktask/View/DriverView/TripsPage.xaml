@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:tracktask.ViewModels"
+    x:Class="tracktask.View.DriverView.TripsPage"
+    Title="My Trips"
+    BackgroundColor="#F4F6F8">
+
+    <ContentPage.BindingContext>
+        <vm:DriverTripsViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25"
+                             Spacing="20"
+                             HorizontalOptions="Center"
+                             WidthRequest="520">
+
+            <Label Text="My Trips"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   TextColor="#2C3E50"
+                   HorizontalOptions="Center" />
+
+            <Label Text="View and complete assigned trips"
+                   FontSize="14"
+                   TextColor="Gray"
+                   HorizontalOptions="Center"
+                   Margin="0,-10,0,10" />
+
+            <CollectionView ItemsSource="{Binding Trips}"
+                            WidthRequest="520"
+                            HeightRequest="600">
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                        <Frame Margin="0,6"
+                               Padding="15"
+                               CornerRadius="16"
+                               BackgroundColor="White"
+                               HasShadow="True">
+
+                            <Grid ColumnDefinitions="*,Auto"
+                                  RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
+                                  ColumnSpacing="10">
+
+                                <Label Grid.Row="0"
+                                       Grid.Column="0"
+                                       Text="{Binding Product}"
+                                       FontSize="20"
+                                       FontAttributes="Bold"
+                                       TextColor="#2C3E50" />
+
+                                <Label Grid.Row="1"
+                                       Grid.Column="0"
+                                       Text="{Binding Location, StringFormat='Destination: {0}'}"
+                                       FontSize="14"
+                                       TextColor="#555555" />
+
+                                <Label Grid.Row="2"
+                                       Grid.Column="0"
+                                       Text="{Binding Date, StringFormat='Date: {0:dd/MM/yyyy}'}"
+                                       FontSize="14"
+                                       TextColor="Gray" />
+
+                                <Label Grid.Row="3"
+                                       Grid.Column="0"
+                                       Text="{Binding TrackName, StringFormat='Track: {0}'}"
+                                       FontSize="13"
+                                       TextColor="#777777" />
+
+                                <Label Grid.Row="4"
+                                       Grid.Column="0"
+                                       Text="{Binding IsDone, StringFormat='Done: {0}'}"
+                                       FontSize="13"
+                                       FontAttributes="Bold"
+                                       TextColor="#27AE60" />
+
+                                <Frame Grid.Row="0"
+                                       Grid.Column="1"
+                                       Padding="10,5"
+                                       CornerRadius="12"
+                                       BackgroundColor="#EAF2FF"
+                                       HasShadow="False"
+                                       VerticalOptions="Center">
+
+                                    <Label Text="{Binding TripId, StringFormat='#{0}'}"
+                                           TextColor="#4A90E2"
+                                           FontAttributes="Bold" />
+
+                                </Frame>
+
+                                <Button Grid.Row="5"
+                                        Grid.Column="0"
+                                        Grid.ColumnSpan="2"
+                                        Text="Mark as Done"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:DriverTripsViewModel}}, Path=MarkAsDoneCommand}"
+                                        CommandParameter="{Binding .}"
+                                        BackgroundColor="#27AE60"
+                                        TextColor="White"
+                                        HeightRequest="45"
+                                        CornerRadius="12"
+                                        Margin="0,10,0,0" />
+
+                            </Grid>
+
+                        </Frame>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

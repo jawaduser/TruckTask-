@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="tracktask.Pages.LoginPage"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="White">
+
+    <Grid>
+
+        <Image Source="homepagephoto.png"
+               Aspect="AspectFill"
+               HorizontalOptions="Fill"
+               VerticalOptions="Fill" />
+
+        <BoxView Color="Black"
+                 Opacity="0.35" />
+
+        <Grid HorizontalOptions="Center"
+              VerticalOptions="Center"
+              WidthRequest="390">
+
+            <Frame CornerRadius="30"
+                   Padding="30"
+                   BackgroundColor="White"
+                   HasShadow="True"
+                   Margin="20">
+
+                <VerticalStackLayout Spacing="18">
+
+                    <Label Text="TRACKTASK"
+                           FontSize="34"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           TextColor="#2C3E50" />
+
+                    <Label Text="Logistics Management System"
+                           FontSize="14"
+                           HorizontalOptions="Center"
+                           TextColor="Gray"
+                           Margin="0,-10,0,15" />
+
+                    <Label Text="Email" TextColor="Gray" />
+
+                    <Entry Placeholder="Enter your email"
+                           Text="{Binding Email}"
+                           Keyboard="Email"
+                           HeightRequest="50"
+                           BackgroundColor="#F7F9FB"
+                           TextColor="Black"
+                           PlaceholderColor="Gray" />
+
+                    <Label Text="Password" TextColor="Gray" />
+
+                    <Entry Placeholder="Enter your password"
+                           Text="{Binding Password}"
+                           IsPassword="True"
+                           HeightRequest="50"
+                           BackgroundColor="#F7F9FB"
+                           TextColor="Black"
+                           PlaceholderColor="Gray" />
+
+                    <Button Text="Log In"
+                            Command="{Binding LoginCommand}"
+                            BackgroundColor="#4A90E2"
+                            TextColor="White"
+                            HeightRequest="55"
+                            CornerRadius="15"
+                            FontAttributes="Bold"
+                            Margin="0,20,0,0" />
+
+                    <HorizontalStackLayout HorizontalOptions="Center" Spacing="5">
+                        <Label Text="Don't have an account?"
+                               TextColor="Gray"
+                               FontSize="13" />
+
+                        <Label Text="Sign Up"
+                               TextColor="#4A90E2"
+                               FontSize="13"
+                               FontAttributes="Bold">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding NavigateToSignUpCommand}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+
+            </Frame>
+
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

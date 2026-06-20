@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:tracktask.ViewModels"
+    x:Class="tracktask.View.Requsetpage"
+    Title="Requests"
+    BackgroundColor="#F4F6F8">
+
+    <ContentPage.BindingContext>
+        <vm:AdminRequestsViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25"
+                             Spacing="20"
+                             HorizontalOptions="Center"
+                             WidthRequest="520">
+
+            <Label Text="Driver Requests"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   TextColor="#2C3E50"
+                   HorizontalOptions="Center" />
+
+            <Label Text="Review and manage driver requests"
+                   FontSize="14"
+                   TextColor="Gray"
+                   HorizontalOptions="Center"
+                   Margin="0,-10,0,10" />
+
+            <CollectionView ItemsSource="{Binding Requests}"
+                            HeightRequest="600"
+                            WidthRequest="520">
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                        <Frame Margin="0,6"
+                               Padding="15"
+                               CornerRadius="16"
+                               BackgroundColor="White"
+                               HasShadow="True">
+
+                            <Grid ColumnDefinitions="*,Auto"
+                                  RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                                  ColumnSpacing="10">
+
+                                <Label Grid.Row="0"
+                                       Grid.Column="0"
+                                       Text="{Binding DriverName}"
+                                       FontSize="18"
+                                       FontAttributes="Bold"
+                                       TextColor="#2C3E50" />
+
+                                <Label Grid.Row="1"
+                                       Grid.Column="0"
+                                       Text="{Binding Message}"
+                                       FontSize="14"
+                                       TextColor="#555555" />
+
+                                <Label Grid.Row="2"
+                                       Grid.Column="0"
+                                       Text="{Binding TripId, StringFormat='Trip ID: {0}'}"
+                                       FontSize="13"
+                                       TextColor="#777777" />
+
+                                <Frame Grid.Row="0"
+                                       Grid.Column="1"
+                                       Padding="10,5"
+                                       CornerRadius="12"
+                                       BackgroundColor="#FFF4CC"
+                                       HasShadow="False"
+                                       VerticalOptions="Center">
+
+                                    <Label Text="{Binding Status}"
+                                           FontSize="13"
+                                           FontAttributes="Bold"
+                                           TextColor="#B8860B" />
+
+                                </Frame>
+
+                                <HorizontalStackLayout Grid.Row="4"
+                                                       Grid.Column="0"
+                                                       Grid.ColumnSpan="2"
+                                                       Spacing="10"
+                                                       Margin="0,10,0,0">
+
+                                    <Button Text="Approve"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:AdminRequestsViewModel}}, Path=ApproveRequestCommand}"
+                                            CommandParameter="{Binding .}"
+                                            BackgroundColor= "#3498DB"
+                                            TextColor="White"
+                                            HeightRequest="45"
+                                            WidthRequest="220"
+                                            CornerRadius="12" />
+
+                                    <Button Text="Reject"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type vm:AdminRequestsViewModel}}, Path=RejectRequestCommand}"
+                                            CommandParameter="{Binding .}"
+                                            BackgroundColor="#E74C3C"
+                                            TextColor="White"
+                                            HeightRequest="45"
+                                            WidthRequest="220"
+                                            CornerRadius="12" />
+
+                                </HorizontalStackLayout>
+
+                            </Grid>
+
+                        </Frame>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

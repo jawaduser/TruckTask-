@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:tracktask.ViewModels"
+    x:Class="tracktask.View.DriverView.DriverRequestsPage"
+    Title="Driver Requests"
+    BackgroundColor="#F4F6F8">
+
+    <ContentPage.BindingContext>
+        <vm:DriverRequestsViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+
+        <VerticalStackLayout Padding="25"
+                             Spacing="20"
+                             HorizontalOptions="Center"
+                             WidthRequest="520">
+
+            <Label Text="Driver Requests"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   TextColor="#2C3E50"
+                   HorizontalOptions="Center" />
+
+            <Frame BackgroundColor="White"
+                   CornerRadius="20"
+                   Padding="25"
+                   HasShadow="True"
+                   WidthRequest="520">
+
+                <VerticalStackLayout Spacing="15">
+
+                    <Label Text="Select Trip"
+                           FontSize="14"
+                           TextColor="Gray" />
+
+                    <Picker ItemsSource="{Binding Trips}"
+                            SelectedItem="{Binding SelectedTrip}"
+                            ItemDisplayBinding="{Binding Product}"
+                            Title="Choose trip"
+                            HeightRequest="60"
+                            WidthRequest="470"
+                            BackgroundColor="#F7F9FB"
+                            TextColor="Black"
+                            TitleColor="Gray" />
+
+                    <Editor Placeholder="Write request message..."
+                            Text="{Binding Message}"
+                            HeightRequest="120"
+                            TextColor="Black"
+                            BackgroundColor="#F7F9FB" />
+
+                    <Button Text="Send Request"
+                            Command="{Binding SendRequestCommand}"
+                            BackgroundColor="#4A90E2"
+                            TextColor="White"
+                            HeightRequest="55"
+                            CornerRadius="15" />
+
+                </VerticalStackLayout>
+
+            </Frame>
+
+            <Label Text="Sent Requests"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="#2C3E50" />
+
+            <CollectionView ItemsSource="{Binding Requests}"
+                            HeightRequest="400"
+                            WidthRequest="520">
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                        <Frame Margin="0,6"
+                               Padding="15"
+                               CornerRadius="16"
+                               BackgroundColor="White"
+                               HasShadow="True">
+
+                            <VerticalStackLayout Spacing="8">
+
+                                <Label Text="{Binding DriverName}"
+                                       FontSize="18"
+                                       FontAttributes="Bold"
+                                       TextColor="#2C3E50" />
+
+                                <Label Text="{Binding Message}"
+                                       FontSize="14"
+                                       TextColor="#555555" />
+
+                                <Frame Padding="8,4"
+                                       CornerRadius="10"
+                                       BackgroundColor="#FFF4CC"
+                                       HorizontalOptions="Start"
+                                       HasShadow="False">
+
+                                    <Label Text="{Binding Status}"
+                                           TextColor="#B8860B"
+                                           FontAttributes="Bold"
+                                           FontSize="12" />
+
+                                </Frame>
+
+                            </VerticalStackLayout>
+
+                        </Frame>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

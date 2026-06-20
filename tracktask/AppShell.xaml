@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="tracktask.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:tracktask.Pages"
+    Shell.FlyoutBehavior="Disabled"
+    Title="tracktask">
+
+    <ShellContent
+        Route="LoginPage"
+        Title="Login"
+        ContentTemplate="{DataTemplate pages:LoginPage}" />
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="#F4F6F8"
+          Padding="20"
+          HeightRequest="160">
+
+            <VerticalStackLayout HorizontalOptions="Center"
+                             VerticalOptions="Center"
+                             Spacing="8">
+
+                <Image Source="logo.png"
+                   WidthRequest="300"
+                   HeightRequest="170"
+                   Aspect="Fill" />
+
+
+            </VerticalStackLayout>
+
+        </Grid>
+    </Shell.FlyoutHeader>
+
+</Shell>
