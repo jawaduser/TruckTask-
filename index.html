@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TruckTask - Logistics Management App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            padding: 40px;
+            max-width: 600px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        .description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .features {
+            text-align: left;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .features h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        .features ul {
+            list-style: none;
+        }
+        .features li {
+            padding: 8px 0;
+            color: #555;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .features li:last-child {
+            border-bottom: none;
+        }
+        .tech-stack {
+            margin-bottom: 30px;
+        }
+        .tech-stack h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        .badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .badge {
+            background: #667eea;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+        .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+            display: inline-block;
+        }
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background: #e0e0e0;
+            color: #333;
+        }
+        .btn-secondary:hover {
+            background: #d0d0d0;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📦 TruckTask</h1>
+        <p class="subtitle">Logistics & Transport Management Mobile App</p>
+        
+        <p class="description">
+            A powerful logistics/transport management mobile application designed for delivery companies. 
+            Admin users can create trips, manage deliveries, and track operations efficiently.
+        </p>
+
+        <div class="features">
+            <h3>✨ Features</h3>
+            <ul>
+                <li>✅ Trip Management System</li>
+                <li>✅ Delivery Tracking</li>
+                <li>✅ Admin Dashboard</li>
+                <li>✅ User Authentication & Authorization</li>
+                <li>✅ Real-time Updates</li>
+                <li>✅ SQLite Database</li>
+            </ul>
+        </div>
+
+        <div class="tech-stack">
+            <h3>🛠️ Technology Stack</h3>
+            <div class="badges">
+                <span class="badge">C#</span>
+                <span class="badge">.NET MAUI</span>
+                <span class="badge">SQLite</span>
+                <span class="badge">MVVM</span>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <a href="https://github.com/jawaduser/TruckTask-" class="btn btn-primary">📂 View on GitHub</a>
+            <a href="https://github.com/jawaduser/TruckTask-/releases" class="btn btn-secondary">📥 Downloads</a>
+        </div>
+    </div>
+</body>
+</html>
